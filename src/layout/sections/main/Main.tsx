@@ -1,7 +1,8 @@
 import React from 'react'
 import { FlexWrapper } from '../../../assets/components/FlexWrapper'
-import ava from '../../../assets/images/photo.jpg'
 import styled from 'styled-components'
+import ava from '../../../assets/images/photo.jpg'
+import { Photo } from '../../../assets/components/photo/Photo'
 
 export const Main = () => {
     return (
@@ -13,7 +14,7 @@ export const Main = () => {
                     <MainTitle>A Web Developer.</MainTitle>
                     <button type="button">Download CV</button>
                 </div>
-                <Photo src={ava} alt="" />
+                <Photo src={ava} alt="" height={'778px'} width={'566px'}/>
             </FlexWrapper>
         </StyledMain>
     )
@@ -32,8 +33,3 @@ const MainTitle =styled.h1`
     
 `
 
-const Photo = styled.img`
-    width: 566px;
-    height: 778px;
-    object-fit: cover;
-`
