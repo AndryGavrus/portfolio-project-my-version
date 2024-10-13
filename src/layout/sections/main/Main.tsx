@@ -14,7 +14,7 @@ export const Main = () => {
                     <MainTitle>A Web Developer.</MainTitle>
                     <button type="button">Download CV</button>
                 </div>
-                <Photo src={ava} alt="" height={'778px'} width={'566px'}/>
+                <Photo src={ava} alt="" height={'auto'} width={'40%'}/>
             </FlexWrapper>
         </StyledMain>
     )
