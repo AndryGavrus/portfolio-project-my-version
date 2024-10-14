@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SectionTitle } from '../../../../assets/components/SectionTitle'
 import { FlexWrapper } from '../../../../assets/components/FlexWrapper'
 import { Icon } from '../../../../assets/components/icon/Icon'
 import engBar from '../../../../assets/images/skillsProgressSvg/engBar.png'
