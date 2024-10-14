@@ -22,7 +22,7 @@ export const Skill = (props: SkillPropsType) => {
 }
 
 const StyledSkill = styled.div`
-
+    
 `
 
 const Mark = styled.span`
