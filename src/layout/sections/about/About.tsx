@@ -10,7 +10,7 @@ export const About = () => {
     return (
         <StyledAbout>
             <FlexWrapper align='center' justify='space-around'>
-                <Photo src={ava} alt="" height={'520px'} width={'470px'}/>
+                <Photo src={ava} alt="" height={'auto'} width={'30%'}/>
                 <AboutInfo>
                 <SectionTitle>About</SectionTitle>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin ut augue netus fusce fringilla. Aliquam blandit enim odio cursus id. Pulvinar commodo pellentesque non massa, nunc massa nisi est id. Diam est molestie massa commodo pulvinar aliquam arcu gravida. Dictum pretium senectus dolor vulputate tempor ac vel. Placerat proin sed risus at fusce aliquam. Convallis varius auctor quam fusce diam. Vulputate enim est nibh diam pellentesque. Adipiscing dolor turpis egestas velit sit feugiat ultricies.

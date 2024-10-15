@@ -3,29 +3,26 @@ import styled from 'styled-components'
 import { FlexWrapper } from '../../../../assets/components/FlexWrapper'
 import { Icon } from '../../../../assets/components/icon/Icon'
 
-type StudiesBlockPropsType = {
+type UniversitiesPropsType = {
     name: string
     info: string
 }
 
-export const StudiesBlock = (props: StudiesBlockPropsType) => {
+export const Universities = (props: UniversitiesPropsType) => {
     return (
-        <StyledStudiesBlock>
-            <University>
+            <StyledUniversity>
             <Icon iconId='book' width='34' height='43' viewBox='0 0 34 34' />
                 <FlexWrapper direction='column' align='flex-start'>
                     <UnName>{props.name}</UnName>
                     <Info>{props.info}</Info>
                 </FlexWrapper>
-            </University>
-        </StyledStudiesBlock>
+            </StyledUniversity>
     )
 }
 
-const StyledStudiesBlock = styled.div`
-`
 
-const University = styled.div`
+
+const StyledUniversity = styled.div`
     display: flex;
     align-items: center;    
 `

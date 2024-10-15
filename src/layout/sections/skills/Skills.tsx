@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { SectionTitle } from '../../../assets/components/SectionTitle'
-import { LangBlock } from './blocks/LangBlock'
-import { StudiesBlock } from './blocks/StudiesBlock'
 import { Skill } from './skillsBar/skill/Skill'
+import { LangSkill } from './blocks/LangSkill'
+import { Universities } from './blocks/Universities'
+import { FlexWrapper } from '../../../assets/components/FlexWrapper'
 
 
 const SkillData = [
@@ -71,18 +72,24 @@ export const Skills = () => {
                     )
                 })}
             </SkillsBar>
-            <SectionTitle as={'h3'}>language</SectionTitle>
-            {LangSkillData.map((s, index) => {
-                return (
-                    <LangBlock key={index} photo={s.photo} title={s.title} mark={s.mark} photoWidth={s.photoWidth} photoVB={s.photoVB} />
-                )
-            })}
-            <SectionTitle as={'h3'}>Studies</SectionTitle>
-            {UniversitiesData.map((s, index)=>{
-                return(
-                    <StudiesBlock name={s.name} info={s.info}/>
-                )
-            })}
+            <FlexWrapper justify='space-around'>
+                <LangBlock>
+                    <SectionTitle as={'h3'}>language</SectionTitle>
+                    {LangSkillData.map((s, index) => {
+                        return (
+                            <LangSkill key={index} photo={s.photo} title={s.title} mark={s.mark} photoWidth={s.photoWidth} photoVB={s.photoVB} />
+                        )
+                    })}
+                </LangBlock>
+                <StudiesBlock>
+                    <SectionTitle as={'h3'}>Studies</SectionTitle>
+                    {UniversitiesData.map((s, index) => {
+                        return (
+                            <Universities name={s.name} info={s.info} />
+                        )
+                    })}
+                </StudiesBlock>
+            </FlexWrapper>
         </SkillsSection>
     )
 }
@@ -96,4 +103,9 @@ const SkillsBar = styled.div`
     display: flex;
     justify-content: space-around;
     flex-grow: 1;
+`
+
+const LangBlock = styled.div`
+`
+const StudiesBlock = styled.div`
 `
