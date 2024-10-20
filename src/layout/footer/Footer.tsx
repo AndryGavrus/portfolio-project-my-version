@@ -6,7 +6,7 @@ import styled from 'styled-components'
 export const Footer = () => {
     return (
         <StyledFooter>
-            <FlexWrapper align='center' justify='center'>
+            <FlexWrapper direction='column' align='center' justify='center'>
                 <SectionTitle>Intrested in my Work</SectionTitle>
                 <Hint>Download my cV to know more about me</Hint>
                 <Btn>Download CV</Btn>
