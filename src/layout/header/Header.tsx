@@ -20,7 +20,7 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px 0;
+    padding-top: 20px;
     position: fixed;
     top: 0;
     left: 0;
