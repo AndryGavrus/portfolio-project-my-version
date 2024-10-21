@@ -24,7 +24,27 @@ const StyledMenu = styled.ul`
 `
 
 const MenuItem = styled.li`
-    
+    position: relative;
+
+    &::before {
+        content: '';
+        height: 2px;
+        background-color: ${theme.colors.font};
+
+        position: absolute;
+        top: 80%;
+        left: -5px;
+        right: -5px;
+        z-index: 1;
+
+        display: none;
+    }
+
+    &:hover{
+        &::before{
+            display: inline-block;
+        }
+    }
 `
 
 const Link = styled.a`

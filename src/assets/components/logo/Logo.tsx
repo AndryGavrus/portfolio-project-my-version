@@ -14,4 +14,7 @@ const LogoLink = styled.a`
     font-size: 32px;
     color: ${theme.colors.font};
 
+    &:hover{
+        font-weight: 600;
+    }
 `
