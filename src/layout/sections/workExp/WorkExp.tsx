@@ -7,8 +7,9 @@ import work1 from '../../../assets/images/server.webp'
 import work2 from '../../../assets/images/nout.webp'
 import work3 from '../../../assets/images/micro.webp'
 import work4 from '../../../assets/images/phone.webp'
+import { Container } from '../../../assets/components/Container'
 
-const WorksData =[
+const WorksData = [
     {
         compName: 'Company Name 1',
         position: 'Sr.Manager',
@@ -41,19 +42,21 @@ const WorksData =[
 export const WorkExp = () => {
     return (
         <StyledWorkExp>
-            <SectionTitle>My Work Experiance</SectionTitle>
-            <FlexWrapper justify='space-around' align='flex-start' wrap='wrap'>
-                {WorksData.map((s, index)=>{
-                    return(
-                        <Work key={index} src={s.src} compName={s.compName} position={s.position} term={s.term}/>
-                    )
-                })}
-            </FlexWrapper>
+            <Container>
+                <SectionTitle>My Work Experiance</SectionTitle>
+                <FlexWrapper justify='space-between' align='flex-start' wrap='wrap'>
+                    {WorksData.map((s, index) => {
+                        return (
+                            <Work key={index} src={s.src} compName={s.compName} position={s.position} term={s.term} />
+                        )
+                    })}
+                </FlexWrapper>
+            </Container>
+
         </StyledWorkExp>
     )
 }
 
 const StyledWorkExp = styled.section`
-    background-color: bisque;
     min-height: 100vh;
 `

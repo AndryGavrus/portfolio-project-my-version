@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Photo } from '../../../../assets/components/photo/Photo'
 import { FlexWrapper } from '../../../../assets/components/FlexWrapper'
+import { theme } from '../../../../styles/Theme'
 
 type WorkPropsType = {
     src: string
@@ -14,7 +15,7 @@ export const Work = (props: WorkPropsType) => {
     return (
         <StyledWork>
             <ImageWrapper>
-                <Photo src={props.src} width='600px' height='450px'/>
+                <Photo src={props.src} width='auto' height='450px'/>
                 <FlexWrapper direction='column'>
                     <CompName>{props.compName}</CompName>
                     <Position>{props.position}</Position>
@@ -26,6 +27,7 @@ export const Work = (props: WorkPropsType) => {
 }
 
 const StyledWork = styled.div`
+    margin-top: 85px;
 `
 
 const ImageWrapper = styled.div`
@@ -35,8 +37,9 @@ const ImageWrapper = styled.div`
     ${FlexWrapper} {
         opacity: 0;
         position: absolute;
-        top: 90%;
-        transform: translateY(-100%);
+        top: 100%;
+        left:10%;
+        transform: translateY(-30%);
     }
 
     &:hover{
@@ -48,13 +51,28 @@ const ImageWrapper = styled.div`
 `
 
 const CompName = styled.h3`
-    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    color: ${theme.colors.font};
 `
 
 const Position = styled.h4`
-    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    color: ${theme.colors.font};
 `
 
 const Term = styled.span`
-    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    color: ${theme.colors.font};
 `
