@@ -5,6 +5,7 @@ import { Icon } from '../../../../assets/components/icon/Icon'
 import engBar from '../../../../assets/images/skillsProgressSvg/engBar.png'
 import frenchBar from '../../../../assets/images/skillsProgressSvg/frenchBar.png'
 import { Photo } from '../../../../assets/components/photo/Photo'
+import { theme } from '../../../../styles/Theme'
 
 type LangSkillPropsType = {
     photo: string
@@ -29,13 +30,24 @@ export const LangSkill = (props: LangSkillPropsType) => {
 }
 
 
-const LangBar = styled.div`
-`
+
 
 const LangTitle = styled.h3`
-
+    font-family:"Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 29px;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    color:${theme.colors.font};
 `
 
 const Mark = styled.span`
+    font-family:"Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    color:${theme.colors.font};
+
     align-self: flex-end;
 `

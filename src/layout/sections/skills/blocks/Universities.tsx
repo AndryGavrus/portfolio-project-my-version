@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { FlexWrapper } from '../../../../assets/components/FlexWrapper'
 import { Icon } from '../../../../assets/components/icon/Icon'
+import { theme } from '../../../../styles/Theme'
 
 type UniversitiesPropsType = {
     name: string
@@ -10,13 +11,15 @@ type UniversitiesPropsType = {
 
 export const Universities = (props: UniversitiesPropsType) => {
     return (
-            <StyledUniversity>
-            <Icon iconId='book' width='34' height='43' viewBox='0 0 34 34' />
-                <FlexWrapper direction='column' align='flex-start'>
-                    <UnName>{props.name}</UnName>
-                    <Info>{props.info}</Info>
-                </FlexWrapper>
-            </StyledUniversity>
+        <StyledUniversity>
+            <IconWrapper>
+                <Icon iconId='book' width='34' height='43' viewBox='0 0 34 34' />
+            </IconWrapper>
+            <FlexWrapper direction='column' align='flex-start'>
+                <UnName>{props.name}</UnName>
+                <Info>{props.info}</Info>
+            </FlexWrapper>
+        </StyledUniversity>
     )
 }
 
@@ -24,12 +27,44 @@ export const Universities = (props: UniversitiesPropsType) => {
 
 const StyledUniversity = styled.div`
     display: flex;
-    align-items: center;    
+    align-items: center;
+`
+
+const IconWrapper = styled.div`
+
+    /* position: relative;
+    z-index: 0;
+
+        &::before {
+        content: '';
+        height: 96px;
+        width: 96px;
+        border-radius: 100%;
+        background: ${theme.colors.accent};
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% -50%);
+        z-index: -1;
+    } */
 `
 
 const UnName = styled.h3`
-    
+    font-family:"Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 29px;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    color:${theme.colors.font};
 `
 
 const Info = styled.p`
+    font-family:"Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    color:${theme.colors.font};
+    margin-bottom: 25px;
 `

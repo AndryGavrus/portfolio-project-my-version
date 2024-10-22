@@ -5,6 +5,7 @@ import { Skill } from './skillsBar/skill/Skill'
 import { LangSkill } from './blocks/LangSkill'
 import { Universities } from './blocks/Universities'
 import { FlexWrapper } from '../../../assets/components/FlexWrapper'
+import { Container } from '../../../assets/components/Container'
 
 
 const SkillData = [
@@ -65,6 +66,7 @@ const UniversitiesData = [
 export const Skills = () => {
     return (
         <SkillsSection>
+            <Container>
             <SectionTitle>My Skills</SectionTitle>
             <SkillsBar>
                 {SkillData.map((s, index) => {
@@ -90,22 +92,39 @@ export const Skills = () => {
                     })}
                 </StudiesBlock>
             </FlexWrapper>
+            </Container>
         </SkillsSection>
     )
 }
 
 const SkillsSection = styled.section`
-    background-color: aqua;
-    min-height: 100vh;
 `
 
 const SkillsBar = styled.div`
+    margin: 40px 0 120px;
+    height: 100%;
     display: flex;
     justify-content: space-around;
     flex-grow: 1;
+    gap: 80px;
+    overflow: auto;
+
+    ${FlexWrapper} {
+        position: relative;
+    }
 `
 
 const LangBlock = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+
+    ${SectionTitle} {
+        margin-bottom: 42px;
+    }
 `
 const StudiesBlock = styled.div`
+    ${SectionTitle} {
+        margin-bottom: 35px;
+    }
 `
