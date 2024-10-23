@@ -18,9 +18,23 @@ export const Footer = () => {
 }
 
 const StyledFooter = styled.footer`
-    background-color: ${theme.colors.primaryBg}
+    background-color: ${theme.colors.primaryBg};
+
+    ${SectionTitle} {
+        margin-top: 180px;
+    }
+
+    ${Button} {
+        margin-bottom: 195px;
+    }
 `
 
 const Hint = styled.span`
-    
+    margin-bottom: 25px;
+
+    font-weight: 400;
+    font-size: 19px;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    color: #9e9e9e;
 `

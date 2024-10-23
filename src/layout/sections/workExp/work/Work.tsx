@@ -15,7 +15,7 @@ export const Work = (props: WorkPropsType) => {
     return (
         <StyledWork>
             <ImageWrapper>
-                <Photo src={props.src} width='auto' height='450px'/>
+                <Photo src={props.src} width='560px' height='auto'/>
                 <FlexWrapper direction='column'>
                     <CompName>{props.compName}</CompName>
                     <Position>{props.position}</Position>
