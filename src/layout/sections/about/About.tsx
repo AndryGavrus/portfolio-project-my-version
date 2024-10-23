@@ -5,6 +5,7 @@ import { Photo } from '../../../assets/components/photo/Photo'
 import ava from '../../../assets/images/photo.jpg'
 import { FlexWrapper } from '../../../assets/components/FlexWrapper'
 import { Container } from '../../../assets/components/Container'
+import { theme } from '../../../styles/Theme'
 
 
 export const About = () => {
@@ -25,12 +26,10 @@ export const About = () => {
 }
 
 const StyledAbout = styled.section`
-    min-height: 644px;
-    display: flex;
+    padding: 60px 0;
 `
 
 const AboutInfo = styled.div`
-    /* height: 212px; */
     width: 525px;
 
     ${SectionTitle}{

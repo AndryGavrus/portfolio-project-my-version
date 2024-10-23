@@ -4,16 +4,16 @@ import { FlexWrapper } from '../../../../assets/components/FlexWrapper'
 import { Icon } from '../../../../assets/components/icon/Icon'
 import { theme } from '../../../../styles/Theme'
 
-type UniversitiesPropsType = {
+type UniversityPropsType = {
     name: string
     info: string
 }
 
-export const Universities = (props: UniversitiesPropsType) => {
+export const University = (props: UniversityPropsType) => {
     return (
         <StyledUniversity>
             <IconWrapper>
-                <Icon iconId='book' width='34' height='43' viewBox='0 0 34 34' />
+                <Icon iconId='book' width='30' height='33' viewBox='0 0 30 33' />
             </IconWrapper>
             <FlexWrapper direction='column' align='flex-start'>
                 <UnName>{props.name}</UnName>
@@ -31,23 +31,13 @@ const StyledUniversity = styled.div`
 `
 
 const IconWrapper = styled.div`
-
-    /* position: relative;
-    z-index: 0;
-
-        &::before {
-        content: '';
-        height: 96px;
-        width: 96px;
-        border-radius: 100%;
-        background: ${theme.colors.accent};
-
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50% -50%);
-        z-index: -1;
-    } */
+    height: 96px;
+    width: 96px;
+    border-radius: 100%;
+    background: ${theme.colors.accent};
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 const UnName = styled.h3`

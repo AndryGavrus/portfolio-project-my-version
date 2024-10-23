@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { SectionTitle } from '../../../assets/components/SectionTitle'
 import { Skill } from './skillsBar/skill/Skill'
 import { LangSkill } from './blocks/LangSkill'
-import { Universities } from './blocks/Universities'
+import { University } from './blocks/Universities'
 import { FlexWrapper } from '../../../assets/components/FlexWrapper'
 import { Container } from '../../../assets/components/Container'
 
@@ -87,7 +87,7 @@ export const Skills = () => {
                     <SectionTitle as={'h3'}>Studies</SectionTitle>
                     {UniversitiesData.map((s, index) => {
                         return (
-                            <Universities name={s.name} info={s.info} />
+                            <University name={s.name} info={s.info} />
                         )
                     })}
                 </StudiesBlock>
@@ -98,6 +98,19 @@ export const Skills = () => {
 }
 
 const SkillsSection = styled.section`
+    ${SectionTitle} {
+        position: relative;
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 178px;
+            height: 2px;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
 `
 
 const SkillsBar = styled.div`

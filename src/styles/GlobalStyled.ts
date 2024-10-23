@@ -35,7 +35,7 @@ button {
 }
 
 section {
-    background-color: ${theme.colors.primaryBg} !important
+    background-color: ${theme.colors.primaryBg}
 }
 
 section:nth-of-type(2) {

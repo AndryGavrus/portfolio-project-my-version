@@ -15,7 +15,7 @@ export const Work = (props: WorkPropsType) => {
     return (
         <StyledWork>
             <ImageWrapper>
-                <Photo src={props.src} width='560px' height='auto'/>
+                <Photo src={props.src} width='100%' height='100%'/>
                 <FlexWrapper direction='column'>
                     <CompName>{props.compName}</CompName>
                     <Position>{props.position}</Position>
@@ -27,7 +27,10 @@ export const Work = (props: WorkPropsType) => {
 }
 
 const StyledWork = styled.div`
-    margin-top: 85px;
+    overflow: hidden;
+    border: 1px solid;
+    width: 590px;
+    height: 450px;
 `
 
 const ImageWrapper = styled.div`
@@ -35,17 +38,21 @@ const ImageWrapper = styled.div`
 
 
     ${FlexWrapper} {
+        height: fit-content;
         opacity: 0;
         position: absolute;
-        top: 100%;
-        left:10%;
-        transform: translateY(-30%);
+        bottom: 0;
+        transform: translateY(100%);
+        left: 70px;
+        z-index: 1;
+        transition: opacity .5s, transform 1.5s
     }
 
     &:hover{
             ${FlexWrapper} {
                 opacity: 1;
-                z-index: 1;
+                transform: translateY(-72px);
+                transition: opacity 2s, transform 1s 
             }
         }
 `
