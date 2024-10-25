@@ -58,5 +58,31 @@ export const WorkExp = () => {
 }
 
 const StyledWorkExp = styled.section`
+    padding: 60px 0;
     min-height: 100vh;
+
+    ${SectionTitle} {
+        position: relative;
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 100px;
+            height: 1px;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: -120px;
+        }
+
+        &::after {
+            content: '';
+            display: inline-block;
+            width: 600px;
+            height: 1px;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            right: -90px;
+        }
+    }
 `

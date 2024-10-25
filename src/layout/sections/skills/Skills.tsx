@@ -98,6 +98,8 @@ export const Skills = () => {
 }
 
 const SkillsSection = styled.section`
+        padding: 60px 0;
+
     ${SectionTitle} {
         position: relative;
         &::before {

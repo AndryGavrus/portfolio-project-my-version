@@ -19,14 +19,7 @@ export const Footer = () => {
 
 const StyledFooter = styled.footer`
     background-color: ${theme.colors.primaryBg};
-
-    ${SectionTitle} {
-        margin-top: 180px;
-    }
-
-    ${Button} {
-        margin-bottom: 195px;
-    }
+    padding: 60px 0 120px;
 `
 
 const Hint = styled.span`
