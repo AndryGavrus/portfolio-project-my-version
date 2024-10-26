@@ -67,7 +67,7 @@ export const Skills = () => {
     return (
         <SkillsSection>
             <Container>
-            <SectionTitle>My Skills</SectionTitle>
+                <SectionTitle>My Skills</SectionTitle>
             </Container>
             <SkillsBar>
                 {SkillData.map((s, index) => {
@@ -76,24 +76,24 @@ export const Skills = () => {
                 })}
             </SkillsBar>
             <Container>
-            <FlexWrapper justify='space-around'>
-                <LangBlock>
-                    <SectionTitle as={'h3'}>language</SectionTitle>
-                    {LangSkillData.map((s, index) => {
-                        return (
-                            <LangSkill key={index} photo={s.photo} title={s.title} mark={s.mark} photoWidth={s.photoWidth} photoVB={s.photoVB} />
-                        )
-                    })}
-                </LangBlock>
-                <StudiesBlock>
-                    <SectionTitle as={'h3'}>Studies</SectionTitle>
-                    {UniversitiesData.map((s, index) => {
-                        return (
-                            <University name={s.name} info={s.info} />
-                        )
-                    })}
-                </StudiesBlock>
-            </FlexWrapper>
+                <FlexWrapper justify='space-around'>
+                    <LangBlock>
+                        <SectionTitle as={'h3'}>language</SectionTitle>
+                        {LangSkillData.map((s, index) => {
+                            return (
+                                <LangSkill key={index} photo={s.photo} title={s.title} mark={s.mark} photoWidth={s.photoWidth} photoVB={s.photoVB} />
+                            )
+                        })}
+                    </LangBlock>
+                    <StudiesBlock>
+                        <SectionTitle as={'h3'}>Studies</SectionTitle>
+                        {UniversitiesData.map((s, index) => {
+                            return (
+                                <University name={s.name} info={s.info} />
+                            )
+                        })}
+                    </StudiesBlock>
+                </FlexWrapper>
             </Container>
         </SkillsSection>
     )
@@ -124,15 +124,19 @@ const SkillsBar = styled.div`
     min-height: 100%;
     padding-left: 120px;
     margin: 0 auto;
+    padding-bottom: 120px;
     border: 1px solid red;
 
-    /* margin: 40px 0 120px; */
     height: 100%;
     display: flex;
     justify-content: space-around;
     flex-grow: 1;
     gap: 80px;
     overflow: auto;
+
+    &::-webkit-scrollbar {
+    display: none; 
+}
     
     ${FlexWrapper} {
         position: relative;
@@ -140,16 +144,40 @@ const SkillsBar = styled.div`
 `
 
 const LangBlock = styled.div`
+    max-width: 500px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 26px;
+    border: 1px solid orange;
 
     ${SectionTitle} {
         margin-bottom: 42px;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
     }
 `
 const StudiesBlock = styled.div`
     ${SectionTitle} {
         margin-bottom: 35px;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
     }
 `

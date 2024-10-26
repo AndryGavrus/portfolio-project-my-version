@@ -1,10 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FlexWrapper } from '../../../../assets/components/FlexWrapper'
-import { Icon } from '../../../../assets/components/icon/Icon'
-import engBar from '../../../../assets/images/skillsProgressSvg/engBar.png'
-import frenchBar from '../../../../assets/images/skillsProgressSvg/frenchBar.png'
-import { Photo } from '../../../../assets/components/photo/Photo'
 import { theme } from '../../../../styles/Theme'
 
 type LangSkillPropsType = {
@@ -19,13 +15,12 @@ export const LangSkill = (props: LangSkillPropsType) => {
     return (
         <FlexWrapper direction='column'>
             <LangTitle>{props.title}</LangTitle>
-            <FlexWrapper direction='column' justify='flex-start' align='flex-start'  >
-                <Mark>{props.mark}</Mark>
-                {/* <Photo src={engBar} width='490px' height='24px'/> */}
-                <Icon iconId={props.photo} width={props.photoWidth} height='24' viewBox={props.photoVB} />
-            </FlexWrapper>
+            <Wrapper>
+                <ProgBar>
+                    <Mark>{props.mark}</Mark>
+                </ProgBar>
+            </Wrapper>
         </FlexWrapper>
-
     )
 }
 
@@ -41,7 +36,34 @@ const LangTitle = styled.h3`
     color:${theme.colors.font};
 `
 
+const Wrapper = styled.div`
+    padding: 15px 0;
+    display: inline-block;
+    text-align: end;
+    border: 1px solid silver;
+`
+
+const ProgBar = styled.div`
+/* fluent 100
+advanced 85
+good 50
+beginner 25  */
+
+    height: 25px;
+    width: 80%;
+    border-radius: 50px;
+    background-image:linear-gradient(90deg, #3c1dff 10.42%, #14c9c9 75%);
+
+    position: relative;
+`
+
+
+
 const Mark = styled.span`
+    position: absolute;
+    top: -20px;
+    right: 0;
+
     font-family:"Poppins", sans-serif;
     font-weight: 600;
     font-size: 14px;
@@ -49,5 +71,4 @@ const Mark = styled.span`
     text-transform: capitalize;
     color:${theme.colors.font};
 
-    align-self: flex-end;
 `
