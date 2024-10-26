@@ -68,12 +68,14 @@ export const Skills = () => {
         <SkillsSection>
             <Container>
             <SectionTitle>My Skills</SectionTitle>
+            </Container>
             <SkillsBar>
                 {SkillData.map((s, index) => {
                     return (<Skill key={index} iconId={s.iconId} title={s.title} mark={s.mark} />
                     )
                 })}
             </SkillsBar>
+            <Container>
             <FlexWrapper justify='space-around'>
                 <LangBlock>
                     <SectionTitle as={'h3'}>language</SectionTitle>
@@ -101,6 +103,7 @@ const SkillsSection = styled.section`
         padding: 60px 0;
 
     ${SectionTitle} {
+        margin-bottom: 40px;
         position: relative;
         &::before {
             content: '';
@@ -116,14 +119,21 @@ const SkillsSection = styled.section`
 `
 
 const SkillsBar = styled.div`
-    margin: 40px 0 120px;
+    max-width: 1440px;
+    width: 100%;
+    min-height: 100%;
+    padding-left: 120px;
+    margin: 0 auto;
+    border: 1px solid red;
+
+    /* margin: 40px 0 120px; */
     height: 100%;
     display: flex;
     justify-content: space-around;
     flex-grow: 1;
     gap: 80px;
     overflow: auto;
-
+    
     ${FlexWrapper} {
         position: relative;
     }
