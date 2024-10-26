@@ -37,7 +37,7 @@ const LangTitle = styled.h3`
 `
 
 const Wrapper = styled.div`
-    padding: 15px 0;
+    padding-top: 15px;
     display: inline-block;
     text-align: end;
     border: 1px solid silver;

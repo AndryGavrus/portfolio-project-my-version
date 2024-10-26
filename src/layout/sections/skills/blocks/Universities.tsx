@@ -28,6 +28,10 @@ export const University = (props: UniversityPropsType) => {
 const StyledUniversity = styled.div`
     display: flex;
     align-items: center;
+
+    &+&{
+        margin-top: 25px;
+    }
 `
 
 const IconWrapper = styled.div`
@@ -38,6 +42,8 @@ const IconWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 22px;
+
 `
 
 const UnName = styled.h3`

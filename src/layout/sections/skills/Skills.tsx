@@ -164,8 +164,14 @@ const LangBlock = styled.div`
             left: 0;
         }
     }
+
+
 `
 const StudiesBlock = styled.div`
+    max-width: 500px;
+    width: 100%;
+    border: 1px solid orange;
+
     ${SectionTitle} {
         margin-bottom: 35px;
 
