@@ -76,7 +76,7 @@ export const Skills = () => {
                 })}
             </SkillsBar>
             <Container>
-                <FlexWrapper justify='space-around'>
+                <FlexWrapper justify='space-between' wrap='wrap'>
                     <LangBlock>
                         <SectionTitle as={'h3'}>language</SectionTitle>
                         {LangSkillData.map((s, index) => {

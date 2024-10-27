@@ -5,22 +5,31 @@ import { theme } from '../../../styles/Theme'
 export const Menu = () => {
     return (
         <StyledMenu>
-            <MenuItem>
-                <Link href="#">Home</Link>
-            </MenuItem>
-            <MenuItem>
-                <Link href="#">Portfolio</Link>
-            </MenuItem>
-            <MenuItem>
-                <Link href="#">Contact</Link>
-            </MenuItem>
+            <ul>
+                <MenuItem>
+                    <Link href="#">Home</Link>
+                </MenuItem>
+                <MenuItem>
+                    <Link href="#">Portfolio</Link>
+                </MenuItem>
+                <MenuItem>
+                    <Link href="#">Contact</Link>
+                </MenuItem>
+            </ul>
         </StyledMenu>
     )
 }
 
-const StyledMenu = styled.ul`
-    display: flex;
-    gap: 30px;
+const StyledMenu = styled.nav`
+    ul{
+        display: flex;
+        gap: 30px;
+
+        @media ${theme.media.tablet} {
+        display: none;
+        }
+    }
+
 `
 
 const MenuItem = styled.li`

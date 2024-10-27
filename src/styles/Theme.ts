@@ -5,5 +5,10 @@ export const theme = {
         accent: 'linear-gradient(180deg, #15b9b9 0%, #3c1dff 100%)',
 
         font: '#fff'
+    },
+
+    media: {
+        tablet: 'screen and (max-width: 768px)',
+        mobile: 'screen and (max-width: 576px)'
     }
 }
