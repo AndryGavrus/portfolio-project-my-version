@@ -1,11 +1,9 @@
 import styled from "styled-components";
 import { theme } from "../../styles/Theme";
+import { font } from "../../styles/Common";
 
 export const Button = styled.button`
-    color: ${theme.colors.font};
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-size: 25px;
+    ${font({weight: 400, Fmax: 25, Fmin: 17})}
     letter-spacing: 0.05em;
     text-transform: capitalize;
 
@@ -13,6 +11,11 @@ export const Button = styled.button`
     width: 277px;
     height: 71px;
     background: ${theme.colors.accent};
+
+    @media ${theme.media.mobile} {
+        width: 191px;
+        height: 49px;
+    }
 
     &:hover{
         /* font-weight: 600; */
