@@ -5,6 +5,7 @@ import { Menu } from '../../assets/components/menu/Menu'
 import { Container } from '../../assets/components/Container'
 import { FlexWrapper } from '../../assets/components/FlexWrapper'
 import { MobileMenu } from '../../assets/components/menu/MobileMenu'
+import { theme } from '../../styles/Theme'
 
 export const Header = () => {
     return (
@@ -28,4 +29,8 @@ const StyledHeader = styled.header`
     left: 0;
     right: 0;
     z-index: 9999;
+
+    @media ${theme.media.mobile} {
+        padding: 15px 0;
+        }
 `

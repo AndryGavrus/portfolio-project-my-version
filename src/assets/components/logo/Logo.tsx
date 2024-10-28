@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { theme } from '../../../styles/Theme'
+import { font } from '../../../styles/Common'
 
 export const Logo = () => {
     return (
@@ -9,10 +10,8 @@ export const Logo = () => {
 }
 
 const LogoLink = styled.a`
-    font-family: "Alex Brush", sans-serif;
-    font-weight: 400;
-    font-size: 32px;
-    color: ${theme.colors.font};
+    ${font({family:'Alex Brush', weight: 400, Fmax: 32, Fmin: 14 })}
+
 
     &:hover{
         font-weight: 600;
