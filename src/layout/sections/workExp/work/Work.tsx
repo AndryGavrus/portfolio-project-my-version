@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Photo } from '../../../../assets/components/photo/Photo'
 import { FlexWrapper } from '../../../../assets/components/FlexWrapper'
 import { theme } from '../../../../styles/Theme'
+import { font } from '../../../../styles/Common'
 
 type WorkPropsType = {
     src: string
@@ -45,7 +46,11 @@ const ImageWrapper = styled.div`
         transform: translateY(100%);
         left: 70px;
         z-index: 1;
-        transition: opacity .5s, transform 1.5s
+        transition: opacity .5s, transform 1.5s;
+
+        @media ${theme.media.mobile} {
+        left: 32px;
+    }
     }
 
     &:hover{
@@ -58,28 +63,19 @@ const ImageWrapper = styled.div`
 `
 
 const CompName = styled.h3`
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 25px;
+    ${font({ weight: 600, Fmax: 25, Fmin: 12 })}
     letter-spacing: 0.05em;
     text-transform: capitalize;
-    color: ${theme.colors.font};
 `
 
 const Position = styled.h4`
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 12px;
+    ${font({ weight: 600, Fmax: 12, Fmin: 7 })}
     letter-spacing: 0.05em;
     text-transform: capitalize;
-    color: ${theme.colors.font};
 `
 
 const Term = styled.span`
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 12px;
+    ${font({ weight: 600, Fmax: 12, Fmin: 7 })}
     letter-spacing: 0.05em;
     text-transform: capitalize;
-    color: ${theme.colors.font};
 `

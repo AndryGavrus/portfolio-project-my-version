@@ -8,6 +8,8 @@ import work2 from '../../../assets/images/nout.webp'
 import work3 from '../../../assets/images/micro.webp'
 import work4 from '../../../assets/images/phone.webp'
 import { Container } from '../../../assets/components/Container'
+import { theme } from '../../../styles/Theme'
+import { font } from '../../../styles/Common'
 
 const WorksData = [
     {
@@ -62,7 +64,15 @@ const StyledWorkExp = styled.section`
     min-height: 100vh;
 
     ${SectionTitle} {
+        ${font({ weight: 600, Fmax: 56, Fmin: 23 })}
+        margin-bottom: 86px;
         position: relative;
+
+        @media ${theme.media.mobile} {
+            text-align: center;
+            margin-bottom: 31px;
+        }
+
         &::before {
             content: '';
             display: inline-block;
@@ -72,6 +82,10 @@ const StyledWorkExp = styled.section`
             position: absolute;
             top: 50%;
             left: -120px;
+
+            @media ${theme.media.mobile} {
+            display: none;
+        }
         }
 
         &::after {
@@ -82,7 +96,11 @@ const StyledWorkExp = styled.section`
             background-color: #fff;
             position: absolute;
             top: 50%;
-            right: -90px;
+            right: -250px;
+
+            @media ${theme.media.mobile} {
+            display: none;
+        }
         }
     }
 `
