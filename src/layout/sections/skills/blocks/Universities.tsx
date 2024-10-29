@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { FlexWrapper } from '../../../../assets/components/FlexWrapper'
 import { Icon } from '../../../../assets/components/icon/Icon'
 import { theme } from '../../../../styles/Theme'
+import { font } from '../../../../styles/Common'
 
 type UniversityPropsType = {
     name: string
@@ -15,7 +16,7 @@ export const University = (props: UniversityPropsType) => {
             <IconWrapper>
                 <Icon iconId='book' width='30' height='33' viewBox='0 0 30 33' />
             </IconWrapper>
-            <FlexWrapper direction='column' align='flex-start'>
+            <FlexWrapper direction='column' align='flex-start' justify='ceneter' >
                 <UnName>{props.name}</UnName>
                 <Info>{props.info}</Info>
             </FlexWrapper>
@@ -31,6 +32,10 @@ const StyledUniversity = styled.div`
 
     &+&{
         margin-top: 25px;
+
+        @media ${theme.media.mobile} {
+            margin-top: 14px;
+        }
     }
 `
 
@@ -44,23 +49,26 @@ const IconWrapper = styled.div`
     align-items: center;
     margin-right: 22px;
 
+
+
+    @media ${theme.media.mobile} {
+            width: 52px;
+            height: 52px;
+            margin-right: 12px;
+        }
+
+
 `
 
 const UnName = styled.h3`
-    font-family:"Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 29px;
+    ${font({ weight: 600, Fmax: 29, Fmin: 16 })}
     letter-spacing: 0.05em;
     text-transform: capitalize;
-    color:${theme.colors.font};
 `
 
 const Info = styled.p`
-    font-family:"Poppins", sans-serif;
-    font-weight: 300;
-    font-size: 18px;
+    ${font({ weight: 300, Fmax: 18, Fmin: 10 })}
     letter-spacing: 0.05em;
     text-transform: capitalize;
-    color:${theme.colors.font};
     margin-bottom: 25px;
 `

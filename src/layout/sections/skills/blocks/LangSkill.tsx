@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { FlexWrapper } from '../../../../assets/components/FlexWrapper'
 import { theme } from '../../../../styles/Theme'
+import { font } from '../../../../styles/Common'
 
 type LangSkillPropsType = {
     photo: string
@@ -25,15 +26,10 @@ export const LangSkill = (props: LangSkillPropsType) => {
 }
 
 
-
-
 const LangTitle = styled.h3`
-    font-family:"Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 29px;
+    ${font({ weight: 600, Fmax: 29, Fmin: 18 })}
     letter-spacing: 0.05em;
     text-transform: capitalize;
-    color:${theme.colors.font};
 `
 
 const Wrapper = styled.div`
@@ -41,6 +37,10 @@ const Wrapper = styled.div`
     display: inline-block;
     text-align: end;
     border: 1px solid silver;
+
+    @media ${theme.media.mobile} {
+        padding-top: 9px;
+        }
 `
 
 const ProgBar = styled.div`
@@ -49,12 +49,16 @@ advanced 85
 good 50
 beginner 25  */
 
-    height: 25px;
+    height: 24px;
     width: 80%;
     border-radius: 50px;
     background-image:linear-gradient(90deg, #3c1dff 10.42%, #14c9c9 75%);
 
     position: relative;
+
+    @media ${theme.media.mobile} {
+        height: 14px;
+        }
 `
 
 
@@ -64,11 +68,11 @@ const Mark = styled.span`
     top: -20px;
     right: 0;
 
-    font-family:"Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 14px;
+    ${font({ weight: 600, Fmax: 14, Fmin: 8 })}
     letter-spacing: 0.05em;
     text-transform: capitalize;
-    color:${theme.colors.font};
 
+    @media ${theme.media.mobile} {
+        top: -10px;
+        }
 `

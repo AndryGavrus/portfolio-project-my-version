@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Icon } from '../../../../../assets/components/icon/Icon'
 import { FlexWrapper } from '../../../../../assets/components/FlexWrapper'
 import { theme } from '../../../../../styles/Theme'
+import { font } from '../../../../../styles/Common'
 
 
 type SkillPropsType = {
@@ -32,6 +33,10 @@ const RoundPB = styled.div<SkillPropsType>`
     display: grid;
     place-items: center;
 
+    @media ${theme.media.mobile} {
+        width: 83px;
+        }
+
     &::before{
         content: '';
         position: absolute;
@@ -49,20 +54,13 @@ const RoundPB = styled.div<SkillPropsType>`
     }
 `
 
-const StyledSkill = styled.div`
-    position: relative;
-`
-
 const Mark = styled.span`
     display: flex;
     position: absolute;
 
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 56px;
+    ${font({ weight: 600, Fmax: 56, Fmin: 19 })}
     letter-spacing: 0.05em;
     text-transform: capitalize;
-    color: ${theme.colors.font};
 `
 
 
@@ -70,10 +68,11 @@ const SkillName = styled.h3`
     text-align: center;
     margin-top: 45px;
 
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 20px;
+    ${font({ weight: 600, Fmax: 20, Fmin: 7 })}
     letter-spacing: 0.05em;
     text-transform: capitalize;
-    color: ${theme.colors.font};
+
+    @media ${theme.media.mobile} {
+        margin-top: 15px;
+        }
 `

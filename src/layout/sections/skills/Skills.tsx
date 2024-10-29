@@ -6,6 +6,8 @@ import { LangSkill } from './blocks/LangSkill'
 import { University } from './blocks/Universities'
 import { FlexWrapper } from '../../../assets/components/FlexWrapper'
 import { Container } from '../../../assets/components/Container'
+import { font } from '../../../styles/Common'
+import { theme } from '../../../styles/Theme'
 
 
 const SkillData = [
@@ -102,9 +104,19 @@ export const Skills = () => {
 const SkillsSection = styled.section`
         padding: 60px 0;
 
+        @media ${theme.media.mobile} {
+        padding: 40px 0;
+        }
+
     ${SectionTitle} {
+        ${font({ weight: 600, Fmax: 56, Fmin: 41 })}
         margin-bottom: 40px;
         position: relative;
+
+        @media ${theme.media.mobile} {
+            margin-bottom: 24px;
+        }
+
         &::before {
             content: '';
             display: inline-block;
@@ -114,13 +126,17 @@ const SkillsSection = styled.section`
             position: absolute;
             top: 0;
             left: 0;
+
+            @media ${theme.media.mobile} {
+        width: 132px;
+        }
         }
     }
+    
 `
 
 const SkillsBar = styled.div`
-    max-width: 1440px;
-    width: 100%;
+    width: 1440px;
     min-height: 100%;
     padding-left: 120px;
     margin: 0 auto;
@@ -129,7 +145,7 @@ const SkillsBar = styled.div`
 
     height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-grow: 1;
     gap: 80px;
     overflow: auto;
@@ -141,6 +157,13 @@ const SkillsBar = styled.div`
     ${FlexWrapper} {
         position: relative;
     }
+
+    @media ${theme.media.mobile} {
+        padding-bottom: 55px;
+        max-width: 576px;
+        width: 100%;
+        padding-left: 60px;
+        }
 `
 
 const LangBlock = styled.div`
@@ -152,6 +175,11 @@ const LangBlock = styled.div`
 
     ${SectionTitle} {
         margin-bottom: 42px;
+        ${font({ weight: 600, Fmax: 56, Fmin: 22 })}
+
+        @media ${theme.media.mobile} {
+            margin-bottom: 21px;
+        }
 
         &::before {
             content: '';
@@ -162,6 +190,10 @@ const LangBlock = styled.div`
             position: absolute;
             top: 100%;
             left: 0;
+
+            @media ${theme.media.mobile} {
+        width: 191px;
+        }
         }
     }
 
@@ -174,6 +206,11 @@ const StudiesBlock = styled.div`
 
     ${SectionTitle} {
         margin-bottom: 35px;
+        ${font({ weight: 600, Fmax: 56, Fmin: 22 })}
+
+        @media ${theme.media.mobile} {
+            margin: 46px 0 21px;
+        }
 
         &::before {
             content: '';
@@ -184,6 +221,10 @@ const StudiesBlock = styled.div`
             position: absolute;
             top: 100%;
             left: 0;
+
+            @media ${theme.media.mobile} {
+        width: 191px;
+        }
         }
     }
 `
