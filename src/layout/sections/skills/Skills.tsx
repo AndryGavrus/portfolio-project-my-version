@@ -14,25 +14,42 @@ const SkillData = [
     {
         iconId: 'photoshopPB',
         title: 'Adobe PhotoShop',
-        mark: '4.0'
+        mark: 4.0
     },
 
     {
         iconId: 'excelPB',
         title: 'Microsoft Excel',
-        mark: '4.8'
+        mark: 4.8
     },
 
     {
         iconId: 'photoshopPB',
         title: 'Adobe PhotoShop',
-        mark: '4.0'
+        mark: 4.0
     },
 
     {
         iconId: 'excelPB',
         title: 'Microsoft Excel',
-        mark: '4.8'
+        mark: 4.8
+    },
+    {
+        iconId: 'excelPB',
+        title: 'Microsoft Excel',
+        mark: 4.8
+    },
+
+    {
+        iconId: 'photoshopPB',
+        title: 'Adobe PhotoShop',
+        mark: 4.0
+    },
+
+    {
+        iconId: 'excelPB',
+        title: 'Microsoft Excel',
+        mark: 4.8
     },
 ]
 
@@ -69,15 +86,18 @@ export const Skills = () => {
     return (
         <SkillsSection>
             <Container>
-                <SectionTitle>My Skills</SectionTitle>
-            </Container>
-            <SkillsBar>
-                {SkillData.map((s, index) => {
-                    return (<Skill key={index} iconId={s.iconId} title={s.title} mark={s.mark} />
-                    )
-                })}
-            </SkillsBar>
-            <Container>
+                <SkillsBlock>
+                    <SectionTitle>My Skills</SectionTitle>
+                    <SkillsWrapper>
+                        <SkillsBar>
+                            {SkillData.map((s, index) => {
+                                return (<Skill key={index} title={s.title} mark={s.mark} />
+                                )
+                            })}
+                        </SkillsBar>
+                    </SkillsWrapper>
+
+                </SkillsBlock>
                 <FlexWrapper justify='space-between' wrap='wrap'>
                     <LangBlock>
                         <SectionTitle as={'h3'}>language</SectionTitle>
@@ -101,12 +121,17 @@ export const Skills = () => {
     )
 }
 
-const SkillsSection = styled.section`
-        padding: 60px 0;
 
-        @media ${theme.media.mobile} {
+
+
+const SkillsSection = styled.section`
+    padding: 60px 0;
+    position: relative;
+    height: 1120px;
+
+    @media ${theme.media.mobile} {
         padding: 40px 0;
-        }
+    }
 
     ${SectionTitle} {
         ${font({ weight: 600, Fmax: 56, Fmin: 41 })}
@@ -134,26 +159,29 @@ const SkillsSection = styled.section`
     }
     
 `
+const SkillsBlock = styled.div`
+    margin-bottom: 120px;
+    height: 540px;
+`
+
+const SkillsWrapper = styled.div `
+    overflow-x: auto;
+    padding: 0 15px 2px;
+    position: absolute;
+    right: 0;
+    left: calc((100vw - 1230px) / 2);
+
+    /* &::-webkit-scrollbar {
+        display: none; 
+    } */
+`
 
 const SkillsBar = styled.div`
-    width: 1440px;
-    min-height: 100%;
-    padding-left: 120px;
-    margin: 0 auto;
-    padding-bottom: 120px;
+    width: max-content;
     border: 1px solid red;
-
-    height: 100%;
     display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
     gap: 80px;
-    overflow: auto;
 
-    &::-webkit-scrollbar {
-    display: none; 
-}
-    
     ${FlexWrapper} {
         position: relative;
     }

@@ -10,6 +10,7 @@ type LangSkillPropsType = {
     photoVB: string
     title: string
     mark: string
+    progress?: number | null
 }
 
 export const LangSkill = (props: LangSkillPropsType) => {
@@ -50,7 +51,7 @@ good 50
 beginner 25  */
 
     height: 24px;
-    width: 80%;
+    width: ${props=> props.progress}%;
     border-radius: 50px;
     background-image:linear-gradient(90deg, #3c1dff 10.42%, #14c9c9 75%);
 

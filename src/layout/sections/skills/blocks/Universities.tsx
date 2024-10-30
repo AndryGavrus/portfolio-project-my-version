@@ -49,7 +49,9 @@ const IconWrapper = styled.div`
     align-items: center;
     margin-right: 22px;
 
-
+    svg {
+        width: 20px
+    }
 
     @media ${theme.media.mobile} {
             width: 52px;
