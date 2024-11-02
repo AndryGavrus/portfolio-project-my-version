@@ -96,7 +96,6 @@ export const Skills = () => {
                             })}
                         </SkillsBar>
                     </SkillsWrapper>
-
                 </SkillsBlock>
                 <FlexWrapper justify='space-between' wrap='wrap'>
                     <LangBlock>
@@ -131,6 +130,7 @@ const SkillsSection = styled.section`
 
     @media ${theme.media.mobile} {
         padding: 40px 0;
+        height: 700px;
     }
 
     ${SectionTitle} {
@@ -161,7 +161,12 @@ const SkillsSection = styled.section`
 `
 const SkillsBlock = styled.div`
     margin-bottom: 120px;
-    height: 540px;
+    height: 480px;
+    
+    @media ${theme.media.mobile} {
+        margin-bottom: 25px;
+        height: 210px;
+    }
 `
 
 const SkillsWrapper = styled.div `
@@ -170,6 +175,12 @@ const SkillsWrapper = styled.div `
     position: absolute;
     right: 0;
     left: calc((100vw - 1230px) / 2);
+
+    @media ${theme.media.mobile} {
+        left: 15px;
+        padding: 0 0 2px;
+
+        }
 
     /* &::-webkit-scrollbar {
         display: none; 
@@ -187,10 +198,9 @@ const SkillsBar = styled.div`
     }
 
     @media ${theme.media.mobile} {
-        padding-bottom: 55px;
         max-width: 576px;
         width: 100%;
-        padding-left: 60px;
+        gap: 30px;
         }
 `
 

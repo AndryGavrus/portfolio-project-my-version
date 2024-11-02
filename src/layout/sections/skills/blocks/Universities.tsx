@@ -50,7 +50,10 @@ const IconWrapper = styled.div`
     margin-right: 22px;
 
     svg {
-        width: 20px
+        @media ${theme.media.mobile} {
+        width: 20px;
+        height: 20px;
+        }
     }
 
     @media ${theme.media.mobile} {
