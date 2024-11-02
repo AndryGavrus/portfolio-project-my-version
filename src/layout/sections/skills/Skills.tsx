@@ -54,19 +54,19 @@ const SkillData = [
 ]
 
 const LangSkillData = [
+    /* fluent 100
+advanced 85
+good 50
+beginner 25  */
     {
-        photo: 'engBar',
-        photoWidth: '490',
-        photoVB: '0 0 490 25',
         title: 'English',
-        mark: 'Fluent'
+        mark: 'Fluent',
+        progress: 100,
     },
     {
-        photo: 'frenchBar',
-        photoWidth: '328',
-        photoVB: '0 0 328 25',
         title: 'French',
-        mark: 'Good'
+        mark: 'Good',
+        progress: 50,
     },
 ]
 
@@ -103,7 +103,7 @@ export const Skills = () => {
                         <SectionTitle as={'h3'}>language</SectionTitle>
                         {LangSkillData.map((s, index) => {
                             return (
-                                <LangSkill key={index} photo={s.photo} title={s.title} mark={s.mark} photoWidth={s.photoWidth} photoVB={s.photoVB} />
+                                <LangSkill key={index} title={s.title} mark={s.mark} progress={s.progress}/>
                             )
                         })}
                     </LangBlock>

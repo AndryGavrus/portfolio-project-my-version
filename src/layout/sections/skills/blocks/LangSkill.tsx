@@ -5,11 +5,12 @@ import { theme } from '../../../../styles/Theme'
 import { font } from '../../../../styles/Common'
 
 type LangSkillPropsType = {
-    photo: string
-    photoWidth: string
-    photoVB: string
     title: string
     mark: string
+    progress?: number | null
+}
+
+type ProgBarPropsType = {
     progress?: number | null
 }
 
@@ -18,7 +19,7 @@ export const LangSkill = (props: LangSkillPropsType) => {
         <FlexWrapper direction='column'>
             <LangTitle>{props.title}</LangTitle>
             <Wrapper>
-                <ProgBar>
+                <ProgBar progress={props.progress}>
                     <Mark>{props.mark}</Mark>
                 </ProgBar>
             </Wrapper>
@@ -44,12 +45,7 @@ const Wrapper = styled.div`
         }
 `
 
-const ProgBar = styled.div`
-/* fluent 100
-advanced 85
-good 50
-beginner 25  */
-
+const ProgBar = styled.div<ProgBarPropsType>`
     height: 24px;
     width: ${props=> props.progress}%;
     border-radius: 50px;
