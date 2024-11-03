@@ -62,45 +62,44 @@ export const WorkExp = () => {
 const StyledWorkExp = styled.section`
     padding: 60px 0;
     min-height: 100vh;
+    position: relative;
+
+    &::before {
+            content: '';
+            display: inline-block;
+            height: 1px;
+            background-color: #fff;
+            position: absolute;
+            top: 8.5%;
+            left: 0;
+            right: 0;
+
+            @media ${theme.media.tablet} {
+            display: none;
+        }
+        }
+
+        /* ${Container} {
+            position: relative;
+            background-color: ${theme.colors.primaryBg};
+        } */
 
     ${SectionTitle} {
+        position: relative;
         ${font({ weight: 600, Fmax: 56, Fmin: 23 })}
         margin-bottom: 86px;
-        position: relative;
+        display: inline-block;
+        background-color: ${theme.colors.primaryBg};
+        padding: 0 90px 0 0;
 
         @media ${theme.media.mobile} {
             text-align: center;
             margin-bottom: 31px;
+            width: 26px;
         }
+    }
 
-        &::before {
-            content: '';
-            display: inline-block;
-            width: 100px;
-            height: 1px;
-            background-color: #fff;
-            position: absolute;
-            top: 50%;
-            left: -120px;
-
-            @media ${theme.media.mobile} {
-            display: none;
-        }
-        }
-
-        &::after {
-            content: '';
-            display: inline-block;
-            width: 600px;
-            height: 1px;
-            background-color: #fff;
-            position: absolute;
-            top: 50%;
-            right: -250px;
-
-            @media ${theme.media.mobile} {
-            display: none;
-        }
-        }
+    ${FlexWrapper} {
+        row-gap: 15px;
     }
 `

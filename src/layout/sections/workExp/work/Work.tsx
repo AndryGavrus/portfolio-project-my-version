@@ -32,11 +32,12 @@ const StyledWork = styled.div`
     border: 1px solid;
     width: 590px;
     height: 450px;
+    height: fit-content;
+
 `
 
 const ImageWrapper = styled.div`
     position: relative;
-
 
     ${FlexWrapper} {
         height: fit-content;
